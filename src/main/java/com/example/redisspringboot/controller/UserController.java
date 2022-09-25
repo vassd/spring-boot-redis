@@ -108,24 +108,22 @@ public class UserController {
   }
 
   /**
-   * Gets all user ordered by age Descending.
+   * Gets all users ordered by age Descending.
    *
    * @return ordered users
    */
   @GetMapping("/usersOrderByAgeDesc")
   public List<UserEntity> getSorted() {
-
     return userRepository.findAll(Sort.by(Sort.Direction.DESC, "age"));
   }
 
   /**
-   * Gets all user whose age is over 30.
+   * Gets all users whose age is over 30.
    *
    * @return filtered users
    */
   @GetMapping("/usersOver30")
   public List<UserEntity> getUsersOver30() {
-
     return userRepository.findAll().stream().filter(user -> user.getAge() > 30).toList();
   }
 }
