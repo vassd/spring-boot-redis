@@ -15,7 +15,7 @@ public class UserEntity {
    * ID of the User.
    */
   @Id
-  private UUID id = UUID.randomUUID();
+  private String id = String.valueOf(UUID.randomUUID());
 
   /**
    * Firstname of the User.
